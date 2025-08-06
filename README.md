@@ -47,6 +47,7 @@ for eg: Oracle, MySQL, DB2, Informix etc...
       INSERT INTO Student VALUES(52, 'AMAN', 26, 'MALE', 98, 8);
       INSERT INTO Student VALUES(52, 'MOHAN', 27, 'MALE', 94, 8);
 
+      
 
 
 
