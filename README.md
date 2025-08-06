@@ -1,4 +1,4 @@
-# Oracle-SQL
+<img width="844" height="957" alt="image" src="https://github.com/user-attachments/assets/d0de5ca0-df9f-48fc-be20-46a58a8d3e37" /># Oracle-SQL
 
 [Agenda]
 1. Introduction
@@ -28,3 +28,74 @@ Database = Group of Information
 **DBMS(DATABASE MANAGEMENT SYSTEM)**
 It is a software which is used to (manage)store data permanently and retrive the large amount of data efficiently.
 for eg: Oracle, MySQL, DB2, Informix etc...
+
+**2. Creation of Tables**
+    1. Creation of Table:
+
+      CREATE TABLE Student
+      (
+      ID number(10),
+      Name varchar2(30),
+      Age number,
+      Gender varchar2(6),
+      Marks number,
+      SEM number
+      );
+
+    2. Now, Let's see how to insert the data into the table:
+
+      INSERT INTO Student VALUES(52, 'AMAN', 26, 'MALE', 98, 8);
+      INSERT INTO Student VALUES(52, 'MOHAN', 27, 'MALE', 94, 8);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
