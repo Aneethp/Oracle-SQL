@@ -97,8 +97,18 @@ lsnrctl status
             4. DATA IN SQL IS CASE SENSITIVE.
 <img width="1522" height="1005" alt="image" src="https://github.com/user-attachments/assets/c6779c2d-364a-49f2-bdd3-d2cdf02e9560" />
     > DataTypes:
-        A data type specifies a particular types of data, such as integer, floating-point, Boolean etc.
+        A data type specifies a particular types of data, such as integer, floating-point, Boolean etc. A data type also specifies the possibke values for that type, the operations that can be performed on that type and the way the values of that type are stored.
+        *Oracle provides the following built-in datatype:
+        - Character datatypes
+                CHAR DATATYPE
+                VARCHAR2 AND VARCHAR DATATYPES
+                LONG DATATYPE
+        - Number datatype
+                FLOAT datatype
+        - DATA Datatype
 
+**6. Operators as keywords**
+Operators:
 
 
 
