@@ -112,74 +112,32 @@ Operators:
 
 🔹 What is SQL?
 SQL (Structured Query Language) is a language used to communicate with relational databases. With SQL, you can:
-Action
-SQL Command
-Get data
-SELECT
-Add data
-INSERT
-Change data
-UPDATE
-Remove data
-DELETE
-Create tables
-CREATE
-Change structure
-ALTER
-Remove tables
-DROP
-
+<img width="414" height="608" alt="image" src="https://github.com/user-attachments/assets/e91e63cf-48ba-4e55-93f4-452e46d97583" />
 
 🔹 What is a Table?
 A table is like a spreadsheet. It has:
-Rows (each row = one record)
-Columns (each column = one field)
+> Rows (each row = one record)
+> Columns (each column = one field)
 Example: employees table
-employee_id
-first_name
-last_name
-department_id
-101
-John
-Smith
-10
-102
-Jane
-Doe
-20
-
+<img width="714" height="221" alt="image" src="https://github.com/user-attachments/assets/1c3fb046-c000-46c3-829c-1bcf7d6e8a1e" />
 
 🧠 SELECT Statement
-✅ Purpose:
-To retrieve data from a table.
+✅ Purpose: To retrieve data from a table.
 🔹 Basic Syntax:
 🔹 Example:
 This shows only the first_name and last_name columns from the employees table.
 
-🧪 Practice 1
-Question:
-What does this query do?
-A) Deletes all employees
-B) Shows all columns and rows from the employees table
-C) Updates employee records
-D) Creates a new table
-👉 Reply with your answer (A, B, C, or D) and I’ll explain it in detail.
-After that, we’ll move on to Lesson 2: Filtering with WHERE.
 
 📘 Lesson 2: WHERE Clause in SQL
-✅ Purpose:
-The WHERE clause is used to filter rows based on a condition. It helps you get only the data you need.
-
+✅ Purpose: The WHERE clause is used to filter rows based on a condition. It helps you get only the data you need.
 🔹 Syntax:
 SELECT column1, column2
 FROM table_name
 WHERE condition;
-
 🔹 Example 1:
 SELECT first_name, salary
 FROM employees
 WHERE salary > 5000;
-
 🔍 This query shows only employees whose salary is greater than 5000.
 
 🔹 Example 2:
@@ -190,37 +148,7 @@ WHERE department_id = 10;
 🔍 This shows employees who belong to department 10.
 
 🔹 Common Operators Used in WHERE
-Operator
-Meaning
-=
-Equal to
-!= or <>
-Not equal to
->
-Greater than
-<
-Less than
->=
-Greater than or equal to
-<=
-Less than or equal to
-BETWEEN
-Between two values
-IN
-Matches any value in a list
-LIKE
-Pattern matching (used with %)
-
-
-🧪 Practice Task
-What does this query do?
-A) Shows employees from departments 10 and 20
-B) Deletes employees from departments 10 and 20
-C) Shows all employees
-D) Updates department IDs
-
-
-
+<img width="508" height="683" alt="image" src="https://github.com/user-attachments/assets/8a07c6a7-2d60-44e0-b893-026a0b792602" />
 
 📘 Lesson 3: Sorting Data with ORDER BY
 ✅ Purpose:
@@ -229,52 +157,45 @@ ORDER BY is used to sort the result set from a SELECT query by one or more colum
 
 🔹 Basic Syntax:
 sql
-CopyEdit
 SELECT column1, column2, ...
 FROM table_name
 ORDER BY column1 [ASC | DESC];
-ASC = Ascending order (default)
-DESC = Descending order
+> ASC = Ascending order (default)
+> DESC = Descending order
 
 🔸 Example 1: Sort by one column
 sql
-CopyEdit
 SELECT * FROM employees
 ORDER BY salary;
 👉 This will list employees by salary from lowest to highest.
 
 🔸 Example 2: Sort by one column (descending)
 sql
-CopyEdit
 SELECT * FROM employees
 ORDER BY hire_date DESC;
 👉 This will show most recently hired employees first.
 
 🔸 Example 3: Sort by multiple columns
 sql
-CopyEdit
 SELECT * FROM employees
 ORDER BY department_id ASC, salary DESC;
 👉 First sorted by department_id (A→Z), then by salary (high→low) within each department.
 
 🔸 Example 4: Using column position (not recommended, but valid)
 sql
-CopyEdit
 SELECT first_name, last_name, hire_date
 FROM employees
 ORDER BY 3 DESC;
 👉 This sorts by the 3rd column, which is hire_date, in descending order.
 
 🧠 Notes:
-ORDER BY comes last in the SQL query.
-You can sort by columns that are not selected in the SELECT clause (in Oracle).
+> ORDER BY comes last in the SQL query.
+> You can sort by columns that are not selected in the SELECT clause (in Oracle).
 
 
 🔷 What are SQL Functions?
 SQL functions are built-in routines in Oracle that perform operations on data and return a value.
 SQL functions allow you to transform or calculate values in your queries.
-
-
 
 🔸 Types of SQL Functions in Oracle
 Type
@@ -286,56 +207,47 @@ Return one result for a group of rows
 
 
 🔹 1. Single-Row Functions
-✅ Purpose:
-Single-row functions operate on one row at a time and return one result per row.
+✅ Purpose:Single-row functions operate on one row at a time and return one result per row.
 
 These are applied to each row and return one result per row.
 🧮 a. Number Functions
-ROUND(n, m) – Rounds number n to m decimal places
-👉 ROUND(123.456, 2) → 123.46
-TRUNC(n, m) – Truncates without rounding
-👉 TRUNC(123.456, 2) → 123.45
-MOD(m, n) – Remainder of division
-👉 MOD(10, 3) → 1
+    > ROUND(n, m) – Rounds number n to m decimal places
+        👉 ROUND(123.456, 2) → 123.46
+    > TRUNC(n, m) – Truncates without rounding
+        👉 TRUNC(123.456, 2) → 123.45
+    > MOD(m, n) – Remainder of division
+        👉 MOD(10, 3) → 1
 🕒 b. Date Functions
-SYSDATE – Current date and time
-MONTHS_BETWEEN(d1, d2) – Difference in months
-ADD_MONTHS(d, n) – Add months to a date
-NEXT_DAY(d, 'FRIDAY') – Next Friday after d
+    >  SYSDATE – Current date and time
+    > MONTHS_BETWEEN(d1, d2) – Difference in months
+    >  ADD_MONTHS(d, n) – Add months to a date
+    > NEXT_DAY(d, 'FRIDAY') – Next Friday after d
 🅰️ c. Character Functions
-UPPER('anita') → ANITA
-LOWER('ORACLE') → oracle
-INITCAP('hello world') → Hello World
-LENGTH('Anita') → 5
-SUBSTR('Oracle', 2, 3) → rac
+    > UPPER('anita') → ANITA
+    > LOWER('ORACLE') → oracle
+    > INITCAP('hello world') → Hello World
+    > LENGTH('Anita') → 5
+    SUBSTR('Oracle', 2, 3) → rac
 🔍 d. Conversion Functions
-TO_CHAR(date/number) – Convert to character
-TO_DATE('2025-07-01', 'YYYY-MM-DD') – Convert to date
-TO_NUMBER('100') – Convert to number
+    > TO_CHAR(date/number) – Convert to character
+    > TO_DATE('2025-07-01', 'YYYY-MM-DD') – Convert to date
+    > TO_NUMBER('100') – Convert to number
 
 🔹 2. Group (Aggregate) Functions
 These work on sets of rows and return a single result:
-Function
-Description
-SUM()
-Total sum
-AVG()
-Average
-MAX()
-Maximum value
-MIN()
-Minimum value
-COUNT()
-Count rows
+Function            Description
+SUM()                Total sum
+AVG()                Average
+MAX()                Maximum value
+MIN()                Minimum value
+COUNT()              Count rows
 
 sql
-CopyEdit
 SELECT COUNT(*) FROM employees;
 SELECT AVG(salary) FROM employees;
 
 🧪 Example Query:
 sql
-CopyEdit
 SELECT department_id, COUNT(*), AVG(salary)
 FROM employees
 GROUP BY department_id;
@@ -348,7 +260,6 @@ Think of it like organizing data into groups — and then calculating something 
 
 🔹 Basic Syntax
 sql
-CopyEdit
 SELECT column_name, AGGREGATE_FUNCTION(column_name)
 FROM table_name
 GROUP BY column_name;
@@ -356,47 +267,14 @@ column_name is what you want to group by (like status or customer_id)
 AGGREGATE_FUNCTION() is something like COUNT(), AVG(), etc.
 
 🧾 Example Table: orders
-order_id
-customer_id
-status
-salesman_id
-order_date
-1
-4
-Pending
-56
-15-OCT-17
-2
-4
-Shipped
-NULL
-26-APR-15
-3
-5
-Shipped
-NULL
-26-APR-17
-4
-8
-Shipped
-59
-09-APR-15
-5
-5
-Canceled
-56
-09-APR-17
-
+<img width="733" height="289" alt="image" src="https://github.com/user-attachments/assets/3f94c224-aeeb-476f-8a9c-e256ba838c7b" />
 
 🔸 Example 1: Group by status
 sql
-CopyEdit
 SELECT status
 FROM orders
 GROUP BY status;
 👉 This will return:
-nginx
-CopyEdit
 Canceled
 Pending
 Shipped
@@ -404,13 +282,10 @@ Why? Because it groups rows by status. There are 3 statuses.
 
 🔸 Example 2: Count orders by status
 sql
-CopyEdit
 SELECT status, COUNT(order_id) AS order_count
 FROM orders
 GROUP BY status;
 👉 Output:
-nginx
-CopyEdit
 Canceled | 1
 Pending  | 1
 Shipped  | 3
@@ -418,7 +293,6 @@ Shipped  | 3
 
 🔸 Example 3: Count orders per customer
 sql
-CopyEdit
 SELECT customer_id, COUNT(order_id)
 FROM orders
 GROUP BY customer_id
@@ -428,7 +302,6 @@ ORDER BY customer_id;
 🔸 Example 4: Use JOIN + GROUP BY
 If you want to get customer names instead of IDs:
 sql
-CopyEdit
 SELECT name, COUNT(order_id)
 FROM orders
 INNER JOIN customers USING (customer_id)
@@ -437,7 +310,6 @@ ORDER BY name;
 
 🔸 Example 5: Group by Year
 sql
-CopyEdit
 SELECT EXTRACT(YEAR FROM order_date) AS order_year,
        COUNT(order_id) AS order_count
 FROM orders
@@ -447,7 +319,6 @@ ORDER BY order_year;
 
 🔸 Example 6: Use WHERE + GROUP BY
 sql
-CopyEdit
 SELECT name, COUNT(order_id)
 FROM orders
 INNER JOIN customers USING (customer_id)
@@ -458,8 +329,6 @@ ORDER BY name;
 
 🔁 SQL Execution Order
 Oracle processes the SQL query in this order:
-vbnet
-CopyEdit
 1. FROM
 2. WHERE
 3. GROUP BY
@@ -470,114 +339,62 @@ So you cannot use column aliases (like order_year) in the GROUP BY clause — yo
 
 📝 Summary
 ✅ Use GROUP BY to:
-Group rows with the same value
-Use aggregate functions like COUNT(), AVG(), MAX(), SUM() on each group
+    > Group rows with the same value
+    > Use aggregate functions like COUNT(), AVG(), MAX(), SUM() on each group
 ✅ Combine GROUP BY with:
-WHERE → to filter rows before grouping
-ORDER BY → to sort the results
-JOIN → to bring data from other tables
+    > WHERE → to filter rows before grouping
+    > ORDER BY → to sort the results
+    > JOIN → to bring data from other tables
 ✅ What is the HAVING Clause in Oracle?
 The HAVING clause is used when you want to filter grouped data — after using GROUP BY.
 Think of it like this:
-WHERE filters rows
-HAVING filters groups
+> WHERE filters rows
+> HAVING filters groups
 
 🔹 Syntax:
 sql
-CopyEdit
 SELECT column1, AGG_FUNCTION(column2)
 FROM table_name
 GROUP BY column1
 HAVING condition;
 
 🧾 Example Table: order_items
-order_id
-item_id
-product_id
-quantity
-unit_price
-7
-1
-227
-74
-305.00
-7
-2
-230
-49
-136.69
-11
-1
-96
-113
-141.56
-11
-2
-40
-79
-299.89
-20
-1
-126
-105
-640.99
-20
-2
-41
-78
-299.89
-
+<img width="602" height="388" alt="image" src="https://github.com/user-attachments/assets/a2f75275-f59f-486a-a222-92f9ed23e74d" />
 
 🔸 Example 1: Get Total Value per Order
 sql
-CopyEdit
 SELECT order_id, SUM(quantity * unit_price) AS total
 FROM order_items
 GROUP BY order_id;
 🔍 This query gives the total value for each order.
 Result:
-order_id
-total
-7
-29,267.81
-11
-39,687.59
-20
-90,695.37
+order_id        total
+7                29,267.81
+11               39,687.59
+20               90,695.37
 
 
 🔸 Example 2: Use HAVING to Filter Orders Over 30,000
 sql
-CopyEdit
 SELECT order_id, SUM(quantity * unit_price) AS total
 FROM order_items
 GROUP BY order_id
 HAVING SUM(quantity * unit_price) > 30000;
 🔍 This shows only orders with total value over 30,000.
 Result:
-order_id
-total
-11
-39,687.59
-20
-90,695.37
+order_id        total
+11                39,687.59
+20                90,695.37
 
 
 🧠 Quick Reminder
-Clause
-What it filters
-When it's used
-WHERE
-Filters rows
-Before GROUP BY
-HAVING
-Filters groups
-After GROUP BY
+Clause            What it filters        When it's used
+WHERE             Filters rows          Before GROUP BY
+HAVING            Filters groups        After GROUP BY
 
 
 🔸 Example 3: Orders over 1,000,000
 sql
-CopyEdit
 SELECT order_id, SUM(unit_price * quantity) AS order_value
 FROM order_items
 GROUP BY order_id
@@ -587,10 +404,9 @@ ORDER BY order_value DESC;
 
 🔸 Example 4: Complex HAVING Conditions
 Let’s say you want orders that:
-Have a total value over 500,000, and
-Have between 10 and 12 products in the order
+    > Have a total value over 500,000, and
+    > Have between 10 and 12 products in the order
 sql
-CopyEdit
 SELECT order_id,
        COUNT(item_id) AS item_count,
        SUM(unit_price * quantity) AS total
@@ -601,16 +417,11 @@ HAVING SUM(unit_price * quantity) > 500000
 ORDER BY total DESC, item_count DESC;
 
 ✅ Summary (Super Easy Version):
-🔹
-✅
-Use GROUP BY
-To group rows by column
-Use HAVING
-To filter grouped results
-Use aggregate functions
-Like SUM(), COUNT(), AVG() with HAVING
-HAVING ≠ WHERE
-HAVING is for groups, WHERE is for rows
+🔹                                    ✅
+Use GROUP BY                    To group rows by column
+Use HAVING                      To filter grouped results
+Use aggregate functions         Like SUM(), COUNT(), AVG() with HAVING
+HAVING ≠ WHERE                  HAVING is for groups, WHERE is for rows
 
 
 
@@ -620,23 +431,16 @@ For example:
 You might have a customers table and an orders table — and want to see which customer placed which order.
 
 🔹 Basic Types of JOINS in Oracle
-Join Type
-Description
-INNER JOIN
-Returns only rows that have matching values in both tables
-LEFT JOIN
-Returns all rows from the left table, and matched rows from the right
-RIGHT JOIN
-Returns all rows from the right table, and matched rows from the left
-FULL JOIN
-Returns all rows when there is a match in either table
-CROSS JOIN
-Returns all possible combinations (Cartesian Product)
+Join Type                Description
+INNER JOIN            Returns only rows that have matching values in both tables
+LEFT JOIN             Returns all rows from the left table, and matched rows from the right
+RIGHT JOIN            Returns all rows from the right table, and matched rows from the left
+FULL JOIN             Returns all rows when there is a match in either table
+CROSS JOIN            Returns all possible combinations (Cartesian Product)
 
 
 🔸 1. INNER JOIN (most common)
 sql
-CopyEdit
 SELECT c.customer_id, c.name, o.order_id
 FROM customers c
 INNER JOIN orders o
@@ -645,7 +449,6 @@ ON c.customer_id = o.customer_id;
 
 🔸 2. LEFT OUTER JOIN
 sql
-CopyEdit
 SELECT c.customer_id, c.name, o.order_id
 FROM customers c
 LEFT JOIN orders o
@@ -655,7 +458,6 @@ Unmatched order_id will be NULL.
 
 🔸 3. RIGHT OUTER JOIN
 sql
-CopyEdit
 SELECT c.customer_id, c.name, o.order_id
 FROM customers c
 RIGHT JOIN orders o
@@ -664,7 +466,6 @@ ON c.customer_id = o.customer_id;
 
 🔸 4. FULL OUTER JOIN
 sql
-CopyEdit
 SELECT c.customer_id, c.name, o.order_id
 FROM customers c
 FULL OUTER JOIN orders o
@@ -673,40 +474,27 @@ ON c.customer_id = o.customer_id;
 
 🔸 5. CROSS JOIN
 sql
-CopyEdit
 SELECT c.name, p.product_name
 FROM customers c
 CROSS JOIN products p;
 🔍 Every customer will be matched with every product. (Use this with caution — can create huge result sets.)
 
 🧠 Visualization of JOIN Types:
-JOIN Type
-Example Output
-INNER JOIN
-Only matching rows (A ∩ B)
-LEFT JOIN
-All from left + matches from right (A ⟶ B)
-RIGHT JOIN
-All from right + matches from left (A ⟵ B)
-FULL JOIN
-All from both sides (A ∪ B)
+JOIN Type            Example Output
+INNER JOIN           Only matching rows (A ∩ B)
+LEFT JOIN            All from left + matches from right (A ⟶ B)
+RIGHT JOIN           All from right + matches from left (A ⟵ B)
+FULL JOIN            All from both sides (A ∪ B)
 
 
 ✅ Summary
-Clause
-Purpose
-JOIN
-Combine rows from two tables
-ON
-Defines how the tables are related
-INNER JOIN
-Matching rows only
-LEFT JOIN
-All left + matched right rows
-RIGHT JOIN
-All right + matched left rows
-FULL JOIN
-All rows from both sides
+Clause            Purpose
+JOIN            Combine rows from two tables
+ON              Defines how the tables are related
+INNER JOIN      Matching rows only
+LEFT JOIN       All left + matched right rows
+RIGHT JOIN      All right + matched left rows
+FULL JOIN       All rows from both sides
 
 
 
@@ -714,21 +502,15 @@ All rows from both sides
 Set operators allow you to combine the result sets of two or more SELECT statements.
 
 🔹 Main Set Operators in Oracle:
-Operator
-Description
-UNION
-Combines results without duplicates
-UNION ALL
-Combines results with duplicates
-INTERSECT
-Shows only common rows in both queries
-MINUS
-Shows rows in the first query only
+Operator            Description
+UNION               Combines results without duplicates
+UNION ALL           Combines results with duplicates
+INTERSECT           Shows only common rows in both queries
+MINUS               Shows rows in the first query only
 
 
 🔸 1. UNION
 sql
-CopyEdit
 SELECT name FROM customers
 UNION
 SELECT name FROM employees;
@@ -737,7 +519,6 @@ SELECT name FROM employees;
 
 🔸 2. UNION ALL
 sql
-CopyEdit
 SELECT name FROM customers
 UNION ALL
 SELECT name FROM employees;
@@ -746,7 +527,6 @@ SELECT name FROM employees;
 
 🔸 3. INTERSECT
 sql
-CopyEdit
 SELECT customer_id FROM orders
 INTERSECT
 SELECT customer_id FROM customers;
@@ -754,56 +534,39 @@ SELECT customer_id FROM customers;
 
 🔸 4. MINUS
 sql
-CopyEdit
 SELECT customer_id FROM customers
 MINUS
 SELECT customer_id FROM orders;
 ✅ Returns customer IDs that exist in customers but not in orders
 
 🔸 Important Rules
-Each SELECT must have the same number of columns
-Columns must be of compatible data types
-Column names are taken from the first SELECT query
-Set operators ignore ORDER BY unless used at the end
+    > Each SELECT must have the same number of columns
+    > Columns must be of compatible data types
+    > Column names are taken from the first SELECT query
+    > Set operators ignore ORDER BY unless used at the end
 ✅ Example with ORDER BY:
 sql
-CopyEdit
 SELECT name FROM customers
 UNION
 SELECT name FROM employees
 ORDER BY name;
 
 📝 Summary Table
-Operator
-Keeps Duplicates?
-Orders Automatically?
-Purpose
-UNION
-❌ No
-✅ Yes
-Combine, remove duplicates
-UNION ALL
-✅ Yes
-❌ No
-Combine, keep duplicates
-INTERSECT
-❌ No
-❌ No
-Common rows only
-MINUS
-❌ No
-❌ No
-Rows from first query, not second
+Operator        Keeps Duplicates?        Orders Automatically?        Purpose
+UNION            ❌ No                    ✅ Yes                    Combine, remove duplicates
+UNION ALL        ✅ Yes                   ❌ No                     Combine, keep duplicates
+INTERSECT        ❌ No                    ❌ No                     Common rows only
+MINUS            ❌ No                    ❌ No                     Rows from first query, not second
 
 
 
 🔍 What Is a Subquery?
 A subquery (also called an inner query or nested query) is a query embedded inside another SQL query. It allows you to use the result of one query as input for another.
 Subqueries are often used in:
-SELECT statements
-WHERE clauses
-FROM clauses
-HAVING clauses
+        > SELECT statements
+        > WHERE clauses
+        > FROM clauses
+        > HAVING clauses
 
 🧠 Basic Structure
 
@@ -817,9 +580,9 @@ This adds a column showing the average salary for all employees.
 This finds departments where the average salary is greater than $50,000.
 
 ✅ Tips for Using Subqueries
-Subqueries must be enclosed in parentheses ().
-You can use single-row or multi-row subqueries depending on the context.
-Use operators like =, IN, ANY, ALL, EXISTS with subqueries.
+    > Subqueries must be enclosed in parentheses ().
+    > You can use single-row or multi-row subqueries depending on the context.
+    > Use operators like =, IN, ANY, ALL, EXISTS with subqueries.
 
 
 
